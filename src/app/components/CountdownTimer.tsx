@@ -43,7 +43,13 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
             {value.toString().padStart(2, '0')}
           </span>
           <span className="text-xs text-gray-500 uppercase tracking-wider mt-1">
-            {unit}
+            {unit === 'days'
+              ? 'dias'
+              : unit === 'hours'
+                ? 'horas'
+                : unit === 'minutes'
+                  ? 'min'
+                  : 'seg'}
           </span>
         </div>
       ))}
